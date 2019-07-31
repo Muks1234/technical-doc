@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+
+<style>
+    .para{
+        margin-top:0px;
+        margin-bottom: 0px;
+        color: #4d4e53;
+    }
+
+    #main-doc{
+        padding:30px;
+        display:flex;
+        flex-direction: column;
+        max-width: 950px;
+        margin-left:320px;
+    }
+
+    
+    header{
+        font-size: 1.8em;
+        font-weight: 500;
+    }
+
+    #main-doc .main-section p{
+        color: #4d4e53;
+        font-size: 1.15em;
+        line-height: 20pt;
+        padding-left:20px;
+    }
+
+    #main-doc .main-section ul{
+        margin-left:30px;
+        color: #4d4e53;
+        font-size: 1.15em;
+        line-height: 20pt;
+    }
+
+    #main-doc .main-section code{
+        margin-left:35px;
+        color: #4d4e53;
+        font-size: 1.05em;
+        line-height: 20pt;
+        background-color: #f7f7f7;
+        display: block;
+        padding:5px 20px 5px 20px;
+        border-radius: 5px;
+    }
+
+    .code-divs{
+        color: #4d4e53;
+        font-size: 1.05em;
+        line-height: 20pt;
+        background-color: #f7f7f7;
+
+    }
+
+    #navbar{
+        width: 320px;
+        display:flex;
+        flex-direction: column;
+        align-items: flex-start;
+        height: 100%;
+        position: fixed;
+        top:0px;
+        left:0px;
+    }
+
+
+    #navbar ul{
+        list-style-type: none;
+        width:100%;
+        margin-left:0px;
+        overflow-y:scroll;
+
+    }
+    #navbar ul li a{
+        color:#4d4e53;
+        text-decoration: none;
+        display: block;
+        font-size: 1.25em;
+        line-height: 20pt;
+        padding:10px;
+    }
+
+
+    #container{
+        display: flex;
+        flex-direction: row;
+    }
+    #navbar ul li{
+        border-top: 1px solid black;
+    }
+
+    
+    @media screen and (max-width: 800px){
+        #main-doc{
+            width: 100%;
+            margin-left:8px;
+            margin-top:200px;
+        }
+        #navbar{
+            width:100%;
+            max-height:190px;
+            position:fixed;
+            top:0px;
+            background-color: white;
+            border:1px solid black;
+        }
+        #container{
+            display: flex;
+            flex-direction: column;
+        }
+    }
+
+
+</style>
+
+
+<html>
+<head>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+
+<body style="margin-left: 0px">
+    <div id="container" class="container-fluid">
+            
+        <nav id="navbar">
+            <header style="padding-left:25px; padding-top:10px">Python Documentation</header>
+            <ul style="padding-inline-start: 0px;">
+                <li><a style="padding-left:25px;" class="nav-link" href="#What_is_Python?">What is Python?</a></li>
+                <li><a style="padding-left:25px;" class="nav-link" href="#Installation_and_documentation">Installation and documentation</a></li>
+                <li><a style="padding-left:25px;" class="nav-link" href="#Comments_in_Python">Comments in Python</a></li>
+                <li><a style="padding-left:25px;" class="nav-link" href="#Numbers_and_other_data_types">Numbers and other data types</a></li>
+                <li><a style="padding-left:25px;" class="nav-link" href="#Strings">Strings</a></li>
+                <li><a style="padding-left:25px;" class="nav-link" href="#Lists_and_tuples">Lists and tuples</a></li>
+                <li><a style="padding-left:25px;" class="nav-link" href="#Boolean_values">Boolean values</a></li>
+                <li><a style="padding-left:25px;" class="nav-link" href="#Expressions">Expressions</a></li>
+                <li><a style="padding-left:25px;" class="nav-link" href="#Operators">Operators</a></li>
+                <li><a style="padding-left:25px;" class="nav-link" href="#Variables_and_assignment">Variables and assignment</a></li>
+                <li><a style="padding-left:25px;" class="nav-link" href="#Decisions">Decisions</a></li>
+                <li><a style="padding-left:25px;" class="nav-link" href="#Loops">Loops</a></li>
+                <li><a style="padding-left:25px;" class="nav-link" href="#References">References</a></li>
+            </ul>
+        </nav>
+
+
+
+        <main id="main-doc">
+                <section class="main-section" id="What_is_Python?">
+                    <header>What is Python?</header>
+
+                    <p>
+                    Python is a powerful modern computer programming language developed by Guido van Rossum, and it is free software. It bears some similarities to
+                    Fortran, one of the earliest programming languages, but it is much more powerful than Fortran.
+                    Python allows you to use variables without declaring them (i.e., it determines types implicitly),
+                    and it relies on indentation as a control structure. You are not forced to define classes in Python
+                    (unlike Java) but you are free to do so when convenient.
+                    </p>
+
+                    <p>This document focuses on learning Python for the purpose of doing mathematical calculations.
+                        We assume the reader has some knowledge of basic mathematics, but we try not to assume any
+                        previous exposure to computer programming, although some such exposure would certainly be
+                        helpful. Python is a good choice for mathematical calculations, since we can write code quickly, test
+                        it easily, and its syntax is similar to the way mathematical ideas are expressed in the mathematical
+                        literature. By learning Python you will also be learning a major tool used by many web developers.
+                    </p>
+                </section>
+        
+                <section class="main-section" id="Installation_and_documentation">
+                    <header>Installation and documentation</header>
+                    <p>
+                        If you use Mac OS X or Linux, then Python should already be installed on your computer by
+                        default. If not, you can download the latest version by visiting the Python home page, at
+                    </p>
+                    <p>
+                        http://www.python.org
+                    </p>
+                    <p>where you will also find loads of documentation and other useful information. Windows users can
+                        also download Python at this website. Don’t forget this website; it is your first point of reference
+                        for all things Python. You will find there, for example, reference [1], the excellent Python Tutorial
+                        by Guido van Rossum. You may find it useful to read along in the Tutorial as a supplement to
+                        this document.
+                    </p>
+                    
+                </section>
+        
+                <section class="main-section" id="Comments_in_Python">
+                    <header>Comments in Python</header>
+                        <p>In a Python command, anything after a # symbol is a comment. For example:</p>
+                        <code>
+                            print " Hello world" #Python is fun to learn
+                        </code>
+                        <p>Comments are not part of the command, but rather intended as documentation for anyone reading
+                            the code.
+                        </p>
+                        <p>Multiline comments are also possible, and are enclosed by triple double-quote symbols:</p>
+                        <code>
+                            <div class="code-divs">""" This is an example of a long comment</div>
+                            <div class="code-divs">that goes on</div>
+                            <div class="code-divs">and on."""</div>
+                        </code>
+                        <br/>
+                </section>
+            
+                <section class="main-section" id="Numbers_and_other_data_types">
+                    <header>Numbers and other data types</header>
+                    <p>Python recognizes several different types of data. These include:</p>
+                    <ul>
+                        <li>Integers</li>
+                        <li>Floats</li>
+                        <li>Long</li>
+                        <li>Strings</li>
+                        <li>Boolean</li>
+                        <li>Lists</li>
+                        <li>And Tuples</li>
+                    </ul>
+                    <p style="font-size:1.2em">The type function</p>
+                    <p>To see the type of some data, use Python’ s builtin type function
+                    </p>
+                    <code>
+                        <div>>>> type ( -75)</div>
+                        <div>&lttype ’int’&gt</div>
+                        <div>>>> type (5.0)</div>
+                        <div>&lttype ’float ’&gt</div>
+                    </code>
+                    
+                    <p>Another useful data type is complex, used for complex numbers. For example:</p>
+                    <code>
+                        <div>>>> 2j</div>
+                        <di>2j</di>
+                        <div>>>> 2j -1</div>
+                        <div>>>> complex(2 ,3)</div>
+                        <div>(2+3j)</div>
+                        <div>>>> type ( -1+2j)</div>
+                        <div>&lttype ’complex’&gt</div>
+                    </code>
+                </section>
+                <br/>
+                <section class="main-section" id="Strings">
+                        <header>Strings</header>
+                        <p>Other useful data types are strings (short for “character strings”); for example "Hello World!".
+                            Strings are sequences of characters enclosed in single or double quotes:
+                        </p>
+                        <code>
+                            <div>>>> " This is a string "</div>
+                            <div>’This is a string ’</div>
+                            <div>>>> ’This is a string , too’</div>
+                            <div>’This is a string , too’</div>
+                            <div>>>> type("This is a string ")</div>
+                            <div>&lttype ’str’&gt</div>
+                        </code>
+
+                        <p>Strings are an example of a sequence type.</p>
+                </section>
+                
+                <section class="main-section" id="Lists_and_tuples">
+                        <header>Lists and tuples</header>
+                        <p>
+                            Other important sequence types used in Python include lists and tuples. A sequence type is formed
+                            by putting together some other types in a sequence. Here is how we form lists and tuples:
+                        </p>
+                        <code>
+                            <div>>>> [1 ,3 ,4 ,1 ,6]</div>
+                            <div>[1, 3, 4, 1, 6]</div>
+                            <div>>>> type( [1 ,3 ,4 ,1 ,6] )</div>
+                            <div>&lttype ’list ’&gt</div>
+                            <div>>>> (1 ,3 ,2)</div>
+                            <div>(1, 3, 2)</div>
+                            <div>>>> type( (1 ,3 ,2) )</div>
+                            <div>&lttype ’tuple ’&gt</div>
+                        </code>
+                        <p>
+                            Notice that lists are enclosed in square brackets while tuples are enclosed in parentheses. Also note
+                            that lists and tuples do not need to be homogeneous; that is, the components can be of different
+                            types:
+                        </p>
+                        <code>
+                            <div>>>> [1 ,2 ," Hello" ,(1 ,2)]</div>
+                            <div>[1, 2, ’Hello ’, (1, 2)]</div>
+                        </code>
+                        <p>
+                            Here we created a list containing four components: two integers, a string, and a tuple. Note that
+                            components of lists may be other lists, and so on:
+                        </p>
+                       <code>
+                           <div>
+                                >>> [1, 2, [1 ,2] , [1 ,[1 ,2]] , 5]
+                           </div>
+                           <div>[1, 2, [1, 2], [1, [1, 2]] , 5]</div>
+                       </code>
+                       <p>
+                            By nesting lists within lists in this way, we can build up complicated stuctures.
+                       </p>
+                       <p>
+                            Sequence types such as lists, tuples, and strings are always ordered, as opposed to a set in mathe-
+                            matics, which is always unordered. Also, repetition is allowed in a sequence, but not in a set.
+                       </p>
+                </section>
+                <section class="main-section" id="Boolean_values">
+                        <header>Boolean values</header>
+                        <p>Finally, we should mention the boolean type. This is a value which is either True or False.</p>
+                        <code>
+                            <di>>>> True</di>
+                            <div>True</div>
+                            <div>>>> type( True)</div>
+                            <div>&lttype ’bool ’&gt</div>
+                            <div>>>> False</div>
+                            <div>False</div>
+                            <div>>>> type( False )</div>
+                            <div>&lttype ’bool ’&gt</div>
+                        </code>
+                        <p>
+                            Boolean types are used in making decisions.
+                        </p>
+                        
+                </section>
+
+
+                <section class="main-section" id="Expressions">
+                    <header>Expressions</header>
+                    <p>
+                        Python expressions are not commands, but rather form part of a command. An expression is
+                        anything which produces a value. Examples of expressions are:
+                    </p>
+                        <code>
+                            <div>2+2, 2**100, f((x-1)/(x+1)).</div>
+                        </code>
+                        
+                     <p>  Note that in order for Python to make sense of the last one, the variable x must have a value
+                        assigned and f should be a previously defined function.
+                    </p>
+                    <p>
+                        Expressions are formed from variables, constants, function evaluations, and operators. Parentheses
+                        are used to indicate order of operations and grouping, as usual.
+                    </p>
+                    
+                </section>
+
+                <section class="main-section" id="Operators">
+                    <header>Operators</header>
+                     <p>The common binary operators for arithmetic are:</p>
+                     <ul>
+                        <li>+ for addition</li>
+                        <li>- for subtraction</li>
+                        <li>* for multiplication</li>
+                        <li>and / for division.</li>
+                    </ul>
+                    <p>
+                        As already mentioned, Python uses ** for exponentiation. Integer
+                        division is performed so that the result is always another integer (the integer quotient):
+                    </p>
+                    <code>
+                        <div>>>> 25/3</div>
+                        <div>8</div>
+                        <div>>>> 5/2</div>
+                        <div>2</div>
+                    </code>
+                    <p>This is a wrinkle that you will always have to keep in mind when working with Python. To get a
+                        more accurate answer, use the float type:
+                    </p>
+                    <code>
+                        <div>>>> 25.0/3</div>
+                        <div>8.3333333333333339</div>
+                        <div>>>> 5/2.0</div>
+                        <div>2.5</div>
+                    </code>
+                    <p>If just one of the operands is of type float, then the result will be of type float. Here is another
+                        example of this pitfall:
+                    </p>
+                    <code>
+                        <div>>>> 2**(1/2)</div>
+                        <div>1</div>
+                    </code>
+                    <p>
+                        where we wanted to compute the square root of 2 as the 1
+                        2 power of 2, but the division in the
+                        exponent produced a result of 0 because of integer division. A correct way to do this computation
+                        is:
+                    </p>
+                    <code>
+                        <div>>>> 2**0.5</div>
+                        <div>1.4142135623730951</div>
+                    </code>
+                    <p>
+                        Another useful operator is %, which is read as ”mod”. This gives the remainder of an integer
+                        division, as in
+                    </p>
+                    <code>
+                        <div>>>> 5 % 2</div>
+                        <div>1</div>
+                        <div>>>> 25 % 3</div>
+                        <div>1</div>
+                    </code>
+                    <p>
+                            which shows that 5 mod 2 = 1, and 25 mod 3 = 1. This operator is useful in number theory and
+                            cryptography.
+                    </p>
+                    <p>
+                        Besides the arithmetic operators we need comparison operators: &lt, &gt, &lt=, &gt=, ==, !=, &lt&gt.
+                        In order
+                        these are read as: is less than, is greater than, is less than or equal to, is greater than or equal to,
+                        is equal to, is not equal to, is not equal to. The result of a comparison is always a boolen value
+                        True or False.
+                    </p>
+                    <code>
+                        <div>>>> 2 &lt 3</div>
+                        <div>True</div>
+                        <div>>>> 3&lt2</div>
+                        <div>False</div>
+                        <div>>>> 3 &lt= 2</div>
+                        <div>False</div>
+                    </code>
+                    <p>
+                        Note that != and &lt &gt are synonomous; either one means not equal to. Also, the operator == means
+                        is equal to.
+                    </p>
+                    <code>
+                        <div>>>> 2 &lt &gt 3</div>
+                        <div>True</div>
+                        <div>>>> 2 != 3</div>
+                        <div>True</div>
+                        <div>>>> 0 != 0</div>
+                        <div>False</div>
+                        <div>>>> 0 == 0</div>
+                        <div>True</div>
+                    </code>
+                </section>
+            <br/>
+                 <section class="main-section" id="Variables_and_assignment">
+                        <header>Variables and assignment</header>
+                        <p>
+                            An assignment statement in Python has the form variable = expression. This has the following
+                            effect. First the expression on the right hand side is evaluated, then the result is assigned to the
+                            variable. After the assignment, the variable becomes a name for the result. The variable retains
+                            the same value until another value is assigned, in which case the previous value is lost. Executing
+                            the assignment produces no output; its purpose it to make the association between the variable
+                            and its value.        
+                        </p>
+                        <code>
+                            <div>>>> x = 2+2</div>
+                            <div>>>> print x</div>
+                        </code>
+
+                       <p>
+                            In the example above, the assignment statement sets x to 4, producing no output. If we want to
+                            see the value of x, we must print it. If we execute another assignment to x, then the previous value
+                            is lost.
+                       </p>
+                       <code>
+                           <div>>>> x = 380.5</div>
+                           <div>>>> print x</div>
+                           <div>380.5</div>
+                           <div>>>> y = 2*x</div>
+                           <div>>>> print y</div>
+                           <div>761.0</div>
+                       </code>
+
+                       <p>
+                            Remember: A single = is used for assignment, the double == is used to test for equality.
+                            In mathematics the equation x = x + 1 is nonsense; it has no solution. In computer science, the
+                            statement x = x + 1 is useful. Its purpose is to add 1 to x, and reassign the result to x. In short,
+                            x is incremented by 1.
+                       </p>
+                       <code>
+                           <div>>>> x = 10</div>
+                           <div>>>> x = x + 1</div>
+                           <div>>>> print x</div>
+                           <div>11</div>
+                           <div>>>> x = x + 1</div>
+                           <div>>>> print x</div>
+                           <div>12</div>
+                       </code>
+                       <P>
+                            Variable names may be any contiguous sequence of letters, numbers, and the underscore (_) char-
+                            acter. The first character must not be a number, and you may not use a reserved word as a variable
+                            name. Case is important; for instance Sum is a different name than sum. Other examples of legal
+                            variable names are: a, v1, v_1, abc, Bucket, monthly_total, __pi__, TotalAssets.
+                       </P>
+                 </section>
+
+                <section class="main-section" id="Decisions">
+                    <header>Decisions</header>
+                        <p>
+                            The if–else is used to make choices in Python code. This is a compound statement. The simplest
+                            form is
+                        </p>
+                        <code>
+                            <div>if c o n d i t i o n :</div>
+                            <div>a c t i o n −1</div>
+                            <div>else:</div>
+                            <div>a c t i o n −2</div>
+                        </code>
+                        <p>
+                            The indentation is required. Note that the else and its action are optional. The actions action-1
+                            and action-2 may consist of many statements; they must all be indented the same amount. The
+                            condition is an expression which evaluates to True or False.
+                        </p>
+                        <p>Of course, if the condition evaluates to True then action-1 is executed, otherwise action-2 is exe-
+                            cuted. In either case execution continues with the statement after the if-else. For example, the
+                            code
+                        </p>
+                        <code>
+                            <div>x = 1</div>
+                            <div>if x > 0:</div>
+                            <div>print "Friday is wonderful"</div>
+                            <div>else:</div>
+                            <div>print "Monday sucks"</div>
+                            <div>print "Have a good weekend"</div>
+                        </code>
+                        <p>
+                            Note that the last print statement is not part of the if-else statement (because it isn’t indented),
+                            so if we change the first line to say x = 0 then the output would be
+                        </p>
+                        <code>
+                            <div>Monday sucks</div>
+                            <div>Have a good weekend</div>
+                        </code>
+                        <p>
+                            More complex decisions may have several alternatives depending on several conditions. For these
+                            the elif is used. It means “else if” and one can have any number of elif clauses between the if
+                            and the else. The usage of elif is best illustrated by an example:
+                        </p>
+                        <code>
+                            <div>if x >= 0 and x &lt 10:</div>
+                            <div>digits = 1</div>
+                            <div>elif x >= 10 and x &lt 100:</div>
+                            <div>digits = 2</div>
+                            <div>elif x >= 100 and x &lt 1000:</div>
+                            <div>digits = 3</div>
+                            <div>elif x >= 1000 and x &lt 10000:</div>
+                            <div>digits = 4</div>
+                            <div>else:</div>
+                            <div>digits = 0 # more than 4</div>
+                        </code>
+                        <p>
+                            In the above, the number of digits in x is computed, so long as the number is 4 or less. If x is
+                            negative or greater than 10000, then digits will be set to zero.
+                        </p>
+                </section>
+                <section class="main-section" id="Loops">
+                        <header>Loops</header>
+                        <p>Python provides two looping commands: for and while. These are compound commands.</p>
+                        <p style="font-size:1.2em">for loop</p>
+                        <p>The syntax of a for loop is</p>
+                        <code>
+                            <div>for item in l i s t :</div>
+                            <div>a c t i o n</div>
+                        </code>
+                        <p>
+                            As usual, the action consists of one or more statements, all at the same indentation level. These
+                            statements are also known as the body of the loop. The item is a variable name, and list is a list.
+                            Execution of the for loop works by setting the variable successively to each item in the list, and
+                            then executing the body each time. Here is a simple example (the comma at the end of the print
+                            makes all printing occur on the same line):
+                        </p>
+                        <code>
+                            <div>for i in [2, 4, 6, 0]:</div>
+                            <div>print i,</div>
+                        </code>
+                        <p>
+                            This produces the output
+                        </p>
+                        <code>
+                            <div>2 4 6 0</div>
+                        </code>
+
+                        <p style="font-size:1.2em">while loop</p>
+                        <p>
+                            The syntax of the while loop is
+                        </p>
+                        <code>
+                            <div>while condition :</div>
+                            <div>action</div>
+                        </code>
+                        <p>
+                            Of course, the action may consist of one or more statements all at the same indentation level. The
+                            statements in the action are known as the body of the loop. Execution of the loop works as follows.
+                            First the condition is evaluated. If True, the body is executed and the condition evaluated again,
+                            and this repeats until the condition evaluates to False. Here is a simple example:
+                        </p>
+                        <code>
+                            <div>n = 0</div>
+                            <div>while n < 10:</div>
+                            <div>print n,</div>
+                            <div>n = n + 3</div>
+                        </code>
+                        <p>
+                            This produces the following output
+                        </p>
+                        <code>
+                            <div>0 3 6 9</div>
+                        </code>
+                        <p>
+                            Note that the body of a while loop is never executed if the condition evaluates to False the first
+                            time. Also, if the body does not change the subsequent evaluations of the condition, an infinite
+                            loop may occur. For example
+                        </p>
+                        <code>
+                            <div>while True:</div>
+                            <div>print " Hello "</div>
+                        </code>
+                        <p>
+                            will print Hellos endlessly. To interrupt the execution of an infinite loop, use CTRL-C.
+                        </p>
+                </section>
+                
+                <section class="main-section" id="References">
+                        <header>References</header>
+                        <p>[1] Guido van Rossum, Python Tutorial, http://docs.python.org.</p>
+                        <p>[2] Guido van Rossum, Python Library Reference Manual, http://docs.python.org.</p>
+                </section>             
+        </main>
+
+    </div>
+
+</body>
+</html>
